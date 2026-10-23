@@ -1,5 +1,8 @@
 # Sound Notifier for Claude Code
 
+[![VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/masdeveloper.vscode-claude-sound-notifier?label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=masdeveloper.vscode-claude-sound-notifier)
+[![Installs](https://img.shields.io/visual-studio-marketplace/i/masdeveloper.vscode-claude-sound-notifier)](https://marketplace.visualstudio.com/items?itemName=masdeveloper.vscode-claude-sound-notifier)
+
 A VS Code extension that plays a sound when **Claude Code needs your approval** or **finishes a response**, so you can switch to something else while it works.
 
 - 🔔 **Approval needed**: two rising notes when Claude is waiting on a permission prompt
@@ -38,7 +41,7 @@ A single approval can fire both `PermissionRequest` and `Notification`, so event
 
 ## Usage
 
-1. Install the extension and click **Install** on the prompt, or run **Claude Sound: Install Claude Code Hooks** from the Command Palette.
+1. Install the extension from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=masdeveloper.vscode-claude-sound-notifier) (or run `code --install-extension masdeveloper.vscode-claude-sound-notifier`) and click **Install** on the prompt, or run **Claude Sound: Install Claude Code Hooks** from the Command Palette.
 2. Restart any running Claude Code sessions so they load the new hooks.
 3. Run **Claude Sound: Test Sounds** to check your audio.
 
