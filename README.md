@@ -76,7 +76,7 @@ Press **F5** in VS Code to launch an Extension Development Host. To build a `.vs
 
 ```bash
 npm run package
-code --install-extension claude-code-sound-notifier-0.2.0.vsix
+code --install-extension vscode-claude-sound-notifier-0.2.0.vsix
 ```
 
 ### Project layout

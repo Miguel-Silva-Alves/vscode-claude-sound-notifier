@@ -1,5 +1,5 @@
 {
-  "name": "claude-code-sound-notifier",
+  "name": "vscode-claude-sound-notifier",
   "displayName": "Sound Notifier for Claude Code",
   "description": "Plays a sound when Claude Code needs your approval or finishes a response.",
   "version": "0.2.0",
