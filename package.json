@@ -1,0 +1,143 @@
+{
+  "name": "claude-code-sound-notifier",
+  "displayName": "Sound Notifier for Claude Code",
+  "description": "Plays a sound when Claude Code needs your approval or finishes a response.",
+  "version": "0.1.0",
+  "publisher": "masdeveloper",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Miguel-Silva-Alves/vscode-claude-sound-notifier.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Miguel-Silva-Alves/vscode-claude-sound-notifier/issues"
+  },
+  "homepage": "https://github.com/Miguel-Silva-Alves/vscode-claude-sound-notifier#readme",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "claude",
+    "claude code",
+    "ai",
+    "sound",
+    "notification",
+    "hooks"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "claudeSoundNotifier.installHooks",
+        "title": "Install Claude Code Hooks",
+        "category": "Claude Sound"
+      },
+      {
+        "command": "claudeSoundNotifier.uninstallHooks",
+        "title": "Uninstall Claude Code Hooks",
+        "category": "Claude Sound"
+      },
+      {
+        "command": "claudeSoundNotifier.toggleMute",
+        "title": "Toggle Mute",
+        "category": "Claude Sound"
+      },
+      {
+        "command": "claudeSoundNotifier.testSounds",
+        "title": "Test Sounds",
+        "category": "Claude Sound"
+      }
+    ],
+    "configuration": {
+      "title": "Sound Notifier for Claude Code",
+      "properties": {
+        "claudeSoundNotifier.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Play sounds for Claude Code events."
+        },
+        "claudeSoundNotifier.volume": {
+          "type": "number",
+          "default": 70,
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Playback volume (0-100). Ignored on Windows and when falling back to aplay."
+        },
+        "claudeSoundNotifier.repeat": {
+          "type": "integer",
+          "default": 1,
+          "minimum": 1,
+          "maximum": 10,
+          "description": "How many times each sound plays per event."
+        },
+        "claudeSoundNotifier.scope": {
+          "type": "string",
+          "enum": [
+            "workspace",
+            "all"
+          ],
+          "enumDescriptions": [
+            "Only react to Claude sessions running inside this window's workspace folders.",
+            "React to every Claude session on this machine, including terminal sessions elsewhere."
+          ],
+          "default": "workspace",
+          "description": "Which Claude Code sessions this window reacts to."
+        },
+        "claudeSoundNotifier.onlyWhenWindowUnfocused": {
+          "type": "boolean",
+          "default": false,
+          "description": "Only play sounds when this VS Code window is not focused."
+        },
+        "claudeSoundNotifier.permission.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Play a sound when Claude is waiting for your approval."
+        },
+        "claudeSoundNotifier.permission.sound": {
+          "type": "string",
+          "default": "default",
+          "description": "\"default\" for the built-in sound, or an absolute path to a .wav file."
+        },
+        "claudeSoundNotifier.done.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Play a sound when Claude finishes a response."
+        },
+        "claudeSoundNotifier.done.sound": {
+          "type": "string",
+          "default": "default",
+          "description": "\"default\" for the built-in sound, or an absolute path to a .wav file."
+        },
+        "claudeSoundNotifier.idle.enabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "Play a sound when Claude has been waiting for your input for a while."
+        },
+        "claudeSoundNotifier.idle.sound": {
+          "type": "string",
+          "default": "default",
+          "description": "\"default\" for the built-in sound, or an absolute path to a .wav file."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "sounds": "node scripts/generate-sounds.js",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.2.1",
+    "typescript": "^5.4.0"
+  }
+}
