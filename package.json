@@ -2,8 +2,9 @@
   "name": "claude-code-sound-notifier",
   "displayName": "Sound Notifier for Claude Code",
   "description": "Plays a sound when Claude Code needs your approval or finishes a response.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "publisher": "masdeveloper",
+  "icon": "images/icon.png",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -129,6 +130,7 @@
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
+    "vscode:uninstall": "node ./out/uninstall.js",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "sounds": "node scripts/generate-sounds.js",

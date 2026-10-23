@@ -76,7 +76,7 @@ Press **F5** in VS Code to launch an Extension Development Host. To build a `.vs
 
 ```bash
 npm run package
-code --install-extension claude-code-sound-notifier-0.1.0.vsix
+code --install-extension claude-code-sound-notifier-0.2.0.vsix
 ```
 
 ### Project layout
@@ -94,7 +94,7 @@ scripts/generate-sounds.js  synthesizes the built-in WAV files
 
 ## Uninstalling
 
-Run **Claude Sound: Uninstall Claude Code Hooks** before removing the extension. You can also delete the folder `~/.claude/claude-sound-notifier`.
+Removing the extension cleans up after itself: the next time VS Code starts, it removes this extension's hooks from `~/.claude/settings.json` and deletes `~/.claude/claude-sound-notifier`. To stop the sounds without uninstalling, run **Claude Sound: Uninstall Claude Code Hooks**.
 
 ## License
 

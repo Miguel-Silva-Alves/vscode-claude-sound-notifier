@@ -6,3 +6,4 @@ scripts/**
 node_modules/**
 .gitignore
 *.vsix
+images/*.svg
